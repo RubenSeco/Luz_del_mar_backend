@@ -3,6 +3,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { PaginationQueryDto } from './dto/pagination-query.dto';
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -22,6 +23,25 @@ export class ProductsService {
 
   async findAll(): Promise<CreateProductDto[]> {
     return this.readData();
+  }
+
+  async findAllPaginated({ page, limit }: PaginationQueryDto) {
+    const products = await this.readData();
+    const totalItems = products.length;
+    const totalPages = Math.ceil(totalItems / limit);
+
+    const start = (page - 1) * limit;
+    const data = products.slice(start, start + limit);
+
+    return {
+      data,
+      meta: {
+        page,
+        limit,
+        totalItems,
+        totalPages,
+      },
+    };
   }
 
   async getByCategory(category: string): Promise<CreateProductDto[]> {

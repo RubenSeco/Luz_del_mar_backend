@@ -10,7 +10,9 @@ import {
   Patch,
   Delete,
   Query,
+  ParseIntPipe,
 } from '@nestjs/common';
+import { PaginationQueryDto } from './dto/pagination-query.dto';
 
 @Controller('products')
 export class ProductsController {
@@ -22,6 +24,13 @@ export class ProductsController {
   getAllProducts() {
     return this.productsService.findAll();
   }
+
+  @Get("paginated")
+  getAllPaginatedProducts(@Query("page", ParseIntPipe) page: number, @Query('limit', ParseIntPipe) limit: number) {
+    return this.productsService.findAllPaginated({ page, limit });
+  }
+
+
 
   @Get("category/:category")
   getProductsByCategory(@Query('category') category: string) {
