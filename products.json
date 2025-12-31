@@ -1,19 +1,19 @@
 [
   {
     "id": "543902e6-2f6a-4d6b-a33f-e8c7ce18dd82",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi aspernatur est, repellat non qui?",
+    "description": "Conjunto de collar y pulsera ",
     "image": "https://res.cloudinary.com/dqmr8bgui/image/upload/v1744129393/luz-del-mar/pkm9iguubldsrjatqtmu.jpg",
-    "category": "bracelet",
-    "slug": "pulseras-1",
-    "title": "Pulseras 1"
+    "category": "set",
+    "slug": "conjunto-20",
+    "title": "Conjunto 20 "
   },
   {
     "id": "3928744b-926e-4a23-a737-83d709200073",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi aspernatur est, repellat non qui?",
     "image": "https://res.cloudinary.com/dqmr8bgui/image/upload/v1744129443/luz-del-mar/x9p9n2jgmq3iyvji0jyw.jpg",
     "category": "necklace",
-    "slug": "collares-2",
-    "title": "Collares 2"
+    "slug": "collares-2-nuevo-producto",
+    "title": "Collares 2 nuevo producto"
   },
   {
     "id": "e95993d2-4eb5-40c7-b03c-fe6e773ac02f",
@@ -27,7 +27,7 @@
     "id": "9d0a47d1-d904-41ed-b574-ec805294d11f",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi aspernatur est, repellat non qui?",
     "image": "https://res.cloudinary.com/dqmr8bgui/image/upload/v1744129534/luz-del-mar/jxcxb6e7kjziyognavgx.jpg",
-    "category": "necklace",
+    "category": "bracelet",
     "slug": "pulseras-3",
     "title": "Pulseras 3"
   },
@@ -43,7 +43,7 @@
     "id": "57720ef2-d589-4026-b7b1-9e33308f27e1",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi aspernatur est, repellat non qui?",
     "image": "https://res.cloudinary.com/dqmr8bgui/image/upload/v1744129649/luz-del-mar/nrpskj1pwufv3soeg1ko.jpg",
-    "category": "earring",
+    "category": "set",
     "slug": "aros-1",
     "title": "Aros 1"
   },
