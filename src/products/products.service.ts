@@ -14,7 +14,6 @@ export class ProductsService {
     private readonly fileStorage: FileStorageService,
   ) { }
 
-
   // create(createProductDto: CreateProductDto) {
   //   return `This action adds a new product: ${JSON.stringify(createProductDto)}`;
   // }
@@ -24,12 +23,12 @@ export class ProductsService {
   }
 
   findAllPaginated(pagination: Pagination) {
+
     const products = this.fileStorage.read(DATA_FILE);
     const page = pagination.page;
     const limit = pagination.limit;
     const totalItems = products.length;
     const totalPages = Math.ceil(totalItems / limit);
-
     const start = (page - 1) * limit;
     const data = products.slice(start, start + limit);
 
@@ -51,14 +50,12 @@ export class ProductsService {
 
   }
 
-  getFirstByCategory(category: string):Product {
+  getFirstByCategory(category: string): Product {
 
     const data = this.fileStorage.read<any>(DATA_FILE);
     return data.find((product) => product.category === category);
 
   }
-
-
 
   // remove(id: number) {
   //   return `This action removes a #${id} product`;

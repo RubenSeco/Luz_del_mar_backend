@@ -16,7 +16,6 @@ import {
 @Controller('products')
 export class ProductsController {
 
-
   constructor(private readonly productsService: ProductsService) { }
 
   @Get()
@@ -29,25 +28,15 @@ export class ProductsController {
     return this.productsService.findAllPaginated({page, limit});
   }
 
-
-
   @Get("category/:category")
   getProductsByCategory(@Query('category') category: string): CreateProductDto[] {
     return this.productsService.getByCategory(category);
   }
 
-
   @Get("first-category/:category")
   getFirstProductByCatetory(@Param('category') category: string): CreateProductDto {
     return this.productsService.getFirstByCategory(category);
   }
-
-  // @Get(':id')
-  // getProductById(@Query('id') id: string):CreateProductDto {
-  //   return this.productsService.getById(id);
-  // }
-
-
 
   // @Post()
   // create(@Body() createProductDto: CreateProductDto) {
