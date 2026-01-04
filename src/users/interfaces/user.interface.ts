@@ -1,9 +1,13 @@
-import { UUID } from "crypto";
 
 export interface User {
 
   id: string;
   userName: string;
   password: string;
-  role: string;
+  roles: Role[];
+}
+
+export enum Role {
+  User = "USER",
+  Admin = "ADMIN"
 }
