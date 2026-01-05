@@ -50,7 +50,10 @@ export class UsersService {
       };
     }
     const { password: _, ...result } = user;
-    return result;
+    return {
+      ok: true,
+      user: result
+    };
   }
 
   delete(id: string): any {

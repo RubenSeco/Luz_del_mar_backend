@@ -10,8 +10,4 @@ import { RolesGuard } from 'src/auth/guards/roles.guard';
   providers: [UsersService, FileStorageService, { provide: APP_GUARD, useClass: RolesGuard }],
   exports: [UsersService],
 })
-export class UsersModule {
-
-
-
-}
+export class UsersModule {}
