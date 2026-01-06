@@ -3,11 +3,13 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ensureDataFiles } from './data/ensure-data-files';
+import { runSeed } from './seed/seed';
 
 
 
 async function bootstrap() {
   ensureDataFiles();
+  runSeed();
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('api');

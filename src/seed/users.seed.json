@@ -1,0 +1,20 @@
+[
+  {
+    "userName": "Ruben",
+    "password": "$2b$10$pqJy61VxduyrIsyQWWekxe99DGMA/NCN2aZpoJB6LKbGrTB4eDxrq",
+    "roles": "ADMIN",
+    "id": "f34b5c93-ebf5-45a0-bb55-9c318d6f281d"
+  },
+  {
+    "userName": "LuzMarina",
+    "password": "$2b$10$gJf2RR/7v8LZj.JZSvZpD.RVKhAyuNfxZYUabrU0VsOvDrVcbc76u",
+    "roles": "ADMIN",
+    "id": "a3b2bf61-b1e2-4b9a-9ae7-bad3fb8d72ad"
+  },
+  {
+    "userName": "Isabel",
+    "password": "$2b$10$2OzVnoQLc9sQtOyLz4cE4.Jblew.n6FGMp9NZDCIpqu/5uK8gNbhi",
+    "roles": "USER",
+    "id": "96c8637b-6af1-443d-832a-ba1525e10244"
+  }
+]
