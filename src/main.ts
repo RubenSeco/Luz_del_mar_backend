@@ -2,8 +2,12 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ensureDataFiles } from './data/ensure-data-files';
+
+
 
 async function bootstrap() {
+  ensureDataFiles();
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('api');
