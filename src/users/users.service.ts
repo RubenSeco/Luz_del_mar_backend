@@ -4,8 +4,10 @@ import { FileStorageService } from 'src/common/file-storage/file-storage-service
 import { User } from './interfaces/user.interface';
 import * as bcrypt from 'bcrypt';
 import { randomUUID } from 'crypto';
+import { DATA_DIR, DATA_FILES } from 'src/data/data.constants';
 
-const DATA_FILE = path.join(__dirname, '../../users.json');
+const USERS_FILE = path.join(DATA_DIR, DATA_FILES.users);
+
 @Injectable()
 export class UsersService {
 
@@ -14,7 +16,7 @@ export class UsersService {
   ) { }
 
   create(user: User) {
-    const users: User[] = this.fileStorage.read<User>(DATA_FILE) || [];
+    const users: User[] = this.fileStorage.read<User>(USERS_FILE) || [];
     if (users.find((u) => u.userName === user.userName)) {
       return {
         ok: false,
@@ -29,12 +31,12 @@ export class UsersService {
       password: hash,
     };
     users.push(newUser);
-    this.fileStorage.write(DATA_FILE, users);
+    this.fileStorage.write(USERS_FILE, users);
   }
 
   find(userName: string, password: string): any {
     // Read existing users, add the new user, and write the updated array
-    const users: User[] = this.fileStorage.read<User>(DATA_FILE) || [];
+    const users: User[] = this.fileStorage.read<User>(USERS_FILE) || [];
     const user = users.find((u) => u.userName === userName);
     if (!user) {
       return {
@@ -58,9 +60,9 @@ export class UsersService {
 
   delete(id: string): any {
     // Read existing users, add the new user, and write the updated array
-    const users: User[] = this.fileStorage.read<User>(DATA_FILE) || [];
+    const users: User[] = this.fileStorage.read<User>(USERS_FILE) || [];
     const index = users.findIndex((u) => u.id === id);
     users.splice(index, 1);
-    this.fileStorage.write(DATA_FILE, users);
+    this.fileStorage.write(USERS_FILE, users);
   }
 }
